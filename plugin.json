@@ -1,0 +1,26 @@
+{
+  "$schema": "https://locaryn.dev/schema/plugin.json/v0.1",
+  "apiVersion": "0.1",
+  "name": "plugin-ssh",
+  "version": "1.0.0",
+  "description": "Remote SSH AI Connector allowing agents to safely execute commands on remote servers.",
+  "author": "Locaryn Team",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Locaryn/plugin-ssh",
+  "repository": "https://github.com/Locaryn/plugin-ssh",
+  "keywords": ["ssh", "remote-execution", "ai-connector", "devops"],
+  "permissions": {
+    "network": true,
+    "shell": true
+  },
+  "capabilities": ["ssh-remote-exec"],
+  "ui_contributions": {
+    "nav_items": [
+      {
+        "id": "connectors",
+        "label": "Connecteurs & MCP",
+        "icon": "🔌"
+      }
+    ]
+  }
+}
