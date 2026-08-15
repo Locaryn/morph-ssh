@@ -1,0 +1,26 @@
+name: Release Extension
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  package:
+    name: Package Extension Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Extension Archive (.zip)
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          [ -n "$TAG" ] || TAG="1.0.0"
+          NAME="${{ github.event.repository.name }}"
+          mkdir -p dist
+          zip -r "dist/${NAME}-v${TAG}.zip" . -x ".git/*" ".github/*" "target/*" "dist/*"
+      - uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          name: "${{ github.event.repository.name }} v${{ github.ref_name }}"
+          files: dist/*.zip
+          generate_release_notes: true
