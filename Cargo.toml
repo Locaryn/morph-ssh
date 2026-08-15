@@ -14,3 +14,8 @@ tracing = "0.1"
 thiserror = "1.0"
 uuid = { version = "1.10", features = ["v4", "serde"] }
 chrono = { version = "0.4", features = ["serde"] }
+
+# Crate autonome : publiée dans son propre dépôt, et compilable
+# telle quelle depuis le monorepo (sinon cargo la croit membre du
+# workspace racine et refuse de la construire).
+[workspace]

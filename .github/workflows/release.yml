@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Une extension qui ne compile pas ne doit pas partir en release : le
+      # .zip n'embarque que des sources, personne ne s'en apercevrait avant
+      # l'installation.
+      - uses: dtolnay/rust-toolchain@1.88
+      - name: Verifier que l'extension compile
+        run: cargo check --all-targets
       - name: Build Extension Archive (.zip)
         run: |
           TAG="${GITHUB_REF_NAME#v}"
@@ -24,6 +30,6 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           draft: false
-          name: "${{ github.event.repository.name }} v${{ github.ref_name }}"
+          name: "${{ github.event.repository.name }} ${{ github.ref_name }}"
           files: dist/*.zip
           generate_release_notes: true
