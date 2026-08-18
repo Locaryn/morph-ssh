@@ -19,7 +19,7 @@
       {
         "id": "connectors",
         "label": "Connecteurs & MCP",
-        "icon": "🔌"
+        "icon": "server"
       }
     ]
   }
