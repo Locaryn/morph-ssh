@@ -2,24 +2,55 @@
   "$schema": "https://locaryn.dev/schema/plugin.json/v0.1",
   "apiVersion": "0.1",
   "name": "plugin-ssh",
-  "version": "1.0.0",
-  "description": "Remote SSH AI Connector allowing agents to safely execute commands on remote servers.",
+  "version": "1.1.0",
+  "description": "Connecteur IA SSH sécurisé pour l'exécution d'ordres, l'inspection des logs et le déploiement distant.",
   "author": "Locaryn Team",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Locaryn/plugin-ssh",
   "repository": "https://github.com/Locaryn/plugin-ssh",
-  "keywords": ["ssh", "remote-execution", "ai-connector", "devops"],
+  "keywords": [
+    "ssh",
+    "remote-execution",
+    "ai-connector",
+    "devops",
+    "server-management"
+  ],
   "permissions": {
-    "network": true,
-    "shell": true
+    "mcp": {
+      "reason": "Lancer le client MCP de gestion des sessions SSH distantes."
+    },
+    "network": {
+      "reason": "Établir des connexions TCP/SSH sortantes vers les serveurs cibles."
+    }
   },
-  "capabilities": ["ssh-remote-exec"],
+  "components": {
+    "skills": [
+      "SKILL.md"
+    ],
+    "mcp": "mcp/mcp.json"
+  },
+  "capabilities": [
+    "ssh-remote-exec"
+  ],
   "ui_contributions": {
+    "slots": [
+      {
+        "id": "ssh-studio",
+        "slot": "studio.tabs",
+        "order": 30,
+        "label": "Sessions SSH",
+        "icon": "server",
+        "type": "custom-element",
+        "entry": "dist/ui.js",
+        "tag": "locaryn-ssh-panel",
+        "hint": "Exécution d'ordres et gestion de serveurs distants"
+      }
+    ],
     "nav_items": [
       {
-        "id": "connectors",
-        "label": "Connecteurs & MCP",
-        "icon": "server"
+        "id": "studio",
+        "label": "Studio de génération",
+        "icon": "image"
       }
     ]
   }

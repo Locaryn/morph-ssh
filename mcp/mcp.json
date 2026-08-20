@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ssh": {
+      "command": "${LOCARYN_PLUGIN_ROOT}/bin/locaryn-ssh-mcp",
+      "args": [],
+      "env": {
+        "RUST_LOG": "warn"
+      },
+      "transport": "stdio",
+      "auto_start": true
+    }
+  }
+}
