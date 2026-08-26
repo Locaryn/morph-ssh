@@ -44,6 +44,17 @@
         "entry": "dist/ui.js",
         "tag": "locaryn-ssh-panel",
         "hint": "Exécution d'ordres et gestion de serveurs distants"
+      },
+      {
+        "id": "ssh-workspaces",
+        "slot": "chat.workspaces",
+        "order": 10,
+        "label": "Emplacements SSH",
+        "icon": "server",
+        "type": "custom-element",
+        "entry": "dist/ui.js",
+        "tag": "locaryn-ssh-workspaces",
+        "hint": "Emplacements de travail et serveurs distants SSH"
       }
     ],
     "nav_items": [
