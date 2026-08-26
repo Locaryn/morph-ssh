@@ -1,13 +1,13 @@
 {
   "$schema": "https://locaryn.dev/schema/plugin.json/v0.1",
   "apiVersion": "0.1",
-  "name": "extension-ssh",
+  "name": "morph-ssh",
   "version": "1.1.0",
   "description": "Connecteur IA SSH sécurisé pour l'exécution d'ordres, l'inspection des logs et le déploiement distant.",
   "author": "Locaryn Team",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/Locaryn/extension-ssh",
-  "repository": "https://github.com/Locaryn/extension-ssh",
+  "homepage": "https://github.com/Locaryn/morph-ssh",
+  "repository": "https://github.com/Locaryn/morph-ssh",
   "keywords": [
     "ssh",
     "remote-execution",
