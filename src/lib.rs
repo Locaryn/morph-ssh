@@ -22,7 +22,10 @@ pub async fn ssh_exec(req: SshExecRequest) -> Result<SshExecResult, String> {
     }
     Ok(SshExecResult {
         exit_code: 0,
-        stdout: format!("Commande exécutée avec succès sur le serveur {}: {}", req.server_id, req.command),
+        stdout: format!(
+            "Commande exécutée avec succès sur le serveur {}: {}",
+            req.server_id, req.command
+        ),
         stderr: String::new(),
         execution_time_ms: 120,
     })
