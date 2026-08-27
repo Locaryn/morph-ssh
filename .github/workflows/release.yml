@@ -103,7 +103,7 @@ jobs:
           for dir in dl/bundle-*; do
             label="${dir#dl/bundle-}"
             chmod +x "$dir"/bin/* || true
-            ( cd "$dir" && zip -r -q "$GITHUB_WORKSPACE/out/plugin-ssh-v${VERSION}-${label}.zip" . )
+            ( cd "$dir" && zip -r -q "$GITHUB_WORKSPACE/out/morph-ssh-v${VERSION}-${label}.zip" . )
           done
           ls -l out
       - name: Vérifier les archives
@@ -117,14 +117,14 @@ jobs:
           done
       - uses: actions/upload-artifact@v7
         with:
-          name: plugin-ssh-archives
+          name: morph-ssh-archives
           path: out/*.zip
           if-no-files-found: error
       - uses: softprops/action-gh-release@v3
         if: startsWith(github.ref, 'refs/tags/')
         with:
           draft: false
-          name: "plugin-ssh ${{ github.ref_name }}"
+          name: "morph-ssh ${{ github.ref_name }}"
           files: out/*.zip
           generate_release_notes: true
           fail_on_unmatched_files: true
