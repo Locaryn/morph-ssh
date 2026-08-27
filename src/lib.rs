@@ -16,17 +16,9 @@ pub struct SshExecResult {
     pub execution_time_ms: u64,
 }
 
-pub async fn ssh_exec(req: SshExecRequest) -> Result<SshExecResult, String> {
-    if req.command.trim().is_empty() {
-        return Err("Commande SSH vide".into());
-    }
-    Ok(SshExecResult {
-        exit_code: 0,
-        stdout: format!(
-            "Commande exécutée avec succès sur le serveur {}: {}",
-            req.server_id, req.command
-        ),
-        stderr: String::new(),
-        execution_time_ms: 120,
-    })
+/// Non implemente. La signature est conservee pour que l'interface et le
+/// serveur MCP gardent leur forme, mais l'appel echoue franchement plutot
+/// que de fabriquer un resultat.
+pub async fn ssh_exec(_req: SshExecRequest) -> Result<SshExecResult, String> {
+    Err("L'execution distante n'est pas implementee : ce morph n'ouvre aucune connexion SSH. Aucune commande n'a ete executee.".into())
 }
