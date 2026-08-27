@@ -1,6 +1,6 @@
 [package]
 name = "locaryn-plugin-ssh"
-version = "2.0.0"
+version = "2.1.0"
 edition = "2021"
 description = "Official Locaryn Extension: Remote SSH AI Agent Connector"
 license = "Apache-2.0"
@@ -14,6 +14,9 @@ path = "src/bin/ssh_mcp.rs"
 
 [dependencies]
 anyhow = "1"
+russh = { version = "0.60.3", default-features = false, features = ["ring", "flate2", "rsa"] }
+zeroize = "1"
+tracing = "0.1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tokio = { version = "1", features = ["full"] }
