@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "ssh": {
-      "command": "${LOCARYN_PLUGIN_ROOT}/bin/locaryn-ssh-mcp",
+      "command": "${LOCARYN_MORPH_ROOT}/bin/locaryn-ssh-mcp",
       "args": [],
       "env": {
         "RUST_LOG": "warn"
