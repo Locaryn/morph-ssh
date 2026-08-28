@@ -2,7 +2,7 @@
   "$schema": "https://locaryn.dev/schema/morph.json/v0.1",
   "apiVersion": "0.1",
   "name": "morph-ssh",
-  "version": "1.0.0-beta.1",
+  "version": "2.2.0-beta.1",
   "description": "Exécution de commandes sur une machine distante par SSH (russh). Clé d'hôte épinglée, secrets gardés hors de la conversation.",
   "author": "Locaryn Team",
   "license": "Apache-2.0",
@@ -69,32 +69,36 @@
   "stability": "untested",
   "versions": [
     {
-      "version": "1.0.0-beta.1",
+      "version": "2.2.0-beta.1",
       "is_beta": true,
-      "summary": "Version Bêta (Pre-release) — non testée par des utilisateurs",
-      "tag": "v1.0.0-beta.1",
-      "released_at": "2026-08-28"
+      "summary": "Version Bêta (2.2.0-beta.1) — pre-release non testée par des utilisateurs",
+      "tag": "v2.2.0-beta.1",
+      "released_at": "2026-08-29",
+      "install_source": "Locaryn/morph-ssh#v2.2.0-beta.1"
     },
     {
-      "version": "0.9.0",
+      "version": "2.1.0",
       "is_beta": false,
-      "summary": "Version de référence stable",
-      "tag": "v0.9.0",
-      "released_at": "2026-08-20"
+      "summary": "Version stable de référence v2.1.0",
+      "tag": "v2.1.0",
+      "released_at": "2026-08-27",
+      "install_source": "Locaryn/morph-ssh#v2.1.0"
     },
     {
-      "version": "0.8.5",
+      "version": "2.0.0",
       "is_beta": false,
-      "summary": "Version précédente stable",
-      "tag": "v0.8.5",
-      "released_at": "2026-08-15"
+      "summary": "Version stable de référence v2.0.0",
+      "tag": "v2.0.0",
+      "released_at": "2026-08-27",
+      "install_source": "Locaryn/morph-ssh#v2.0.0"
     },
     {
-      "version": "0.8.0",
+      "version": "1.0.0",
       "is_beta": false,
-      "summary": "Version initiale du socle",
-      "tag": "v0.8.0",
-      "released_at": "2026-08-01"
+      "summary": "Version stable de référence v1.0.0",
+      "tag": "v1.0.0",
+      "released_at": "2026-08-27",
+      "install_source": "Locaryn/morph-ssh#v1.0.0"
     }
   ]
 }
